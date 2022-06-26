@@ -1,0 +1,67 @@
+@import "reset.css";
+@import "variables.css";
+
+body {
+  background-color: var(--background);
+  font-family: "Encode Sans", sans-serif, "Font Awesome 5 Brands",
+    "Font Awesome 5 Free";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.canvas {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 13px;
+  box-shadow: var(--basic-shadow);
+}
+
+.controls {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls_btns {
+  margin-bottom: 20px;
+}
+
+.controls_btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: white;
+  padding: 3px 0px;
+  width: 60px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: var(--basic-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.controls_btns button:active {
+  transform: scale(0.98);
+}
+
+.controls_colors {
+  display: flex;
+}
+
+.controls_color {
+  width: 30px;
+  height: 30px;
+  box-shadow: var(--basic-shadow);
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.controls_range {
+  margin-bottom: 10px;
+}
