@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15px;
+  padding: 15px 0px;
 }
 
 .canvas {
@@ -60,6 +60,7 @@ body {
   box-shadow: var(--basic-shadow);
   border-radius: 17px;
   cursor: pointer;
+  margin: 0px 1px;
 }
 
 .controls_range {
