@@ -4,6 +4,8 @@ const jscolor = document.getElementsByClassName("controls_color");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const save = document.getElementById("jsSave");
+const jsDelete = document.getElementById("jsDelete");
+const eraser = document.getElementById("jsEraser");
 // canvas는 HTML 요소로 그 안의 픽셀들을 다룰 수 있다.
 
 const BASIC_COLOR = "black";
@@ -88,6 +90,7 @@ function rangeChange(event) {
   const size = event.target.value;
   ctx.lineWidth = size;
 }
+
 function modeChange(event) {
   if (filling === true) {
     filling = false;
@@ -96,6 +99,16 @@ function modeChange(event) {
     filling = true;
     mode.innerText = "Paint";
   }
+}
+
+function handleDelete(event) {
+  alert("Really Reset?");
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+}
+
+function handleEraser() {
+  ctx.strokeStyle = "white";
 }
 
 Array.from(jscolor).forEach((trans) =>
@@ -113,4 +126,17 @@ if (mode) {
 
 if (save) {
   save.addEventListener("click", handleSave);
+}
+
+if (jsDelete) {
+  jsDelete.addEventListener("click", handleDelete);
+}
+
+if (eraser) {
+  eraser.addEventListener("mousemove", onMouseMove);
+  eraser.addEventListener("mousedown", startPainting);
+  eraser.addEventListener("mouseup", stopPainting);
+  eraser.addEventListener("mouseleave", stopPainting);
+  eraser.addEventListener("click", handleEraser);
+  range.addEventListener("input", rangeChange);
 }
